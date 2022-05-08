@@ -102,6 +102,11 @@ class Ip{
             return 1;
         }
         $ipNumerica = $datas[0].$datas[1].$datas[2].$datas[3];
+        if($ipNumerica>9999999999){
+            $ip = substr($ip,0,-1);
+            $datas = explode(".",$ip);
+            $ipNumerica = $datas[0].$datas[1].$datas[2].$datas[3];
+        }
         return $ipNumerica;
     }
 
